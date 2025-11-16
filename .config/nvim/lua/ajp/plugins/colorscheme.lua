@@ -5,7 +5,7 @@ return {
 		config = function()
 			require("tokyonight").setup({
 				style = "night",
-				transparent = false,
+				transparent = true,
 			})
 
 			-- fix background for nvimtree
