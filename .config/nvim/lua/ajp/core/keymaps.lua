@@ -19,6 +19,10 @@ keymap.set("n", "<leader>w/", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>w-", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Balance windows" })
 
+keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
+keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
