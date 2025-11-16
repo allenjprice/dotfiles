@@ -26,7 +26,6 @@ My personal collection of configs for my zshell, neovim, etc.
   - yazi (probably)
   - zoxide (proably)
   - bat
-  - nvm
   - powerlevel10k (or maybe starship, make up your mind)
   - gh
   - lazygit
@@ -40,3 +39,5 @@ My personal collection of configs for my zshell, neovim, etc.
 ## install from not homebrew
 
 - homebrew
+- nvm
+- oh-my-zsh
