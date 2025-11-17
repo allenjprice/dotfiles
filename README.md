@@ -41,3 +41,38 @@ My personal collection of configs for my zshell, neovim, etc.
 - homebrew
 - nvm
 - oh-my-zsh
+
+## after install: update `.zshrc`
+
+after installing everything, add the following to your local .zshrc
+
+```
+# --- make nvim default editor ----
+export EDITOR=nvim
+
+# ---- Eza -----
+
+alias ls="eza --icons=always"
+
+# ---- Zoxide ----
+eval "$(zoxide init zsh)"
+alias cd="z"
+
+# ---- fzf ----
+source <(fzf --zsh)
+
+# ----- Bat -----
+
+export BAT_THEME=tokyonight_storm
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
