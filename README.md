@@ -19,6 +19,7 @@ My personal collection of configs for my zshell, neovim, etc.
   - font-monaspice-nerd-font
   - font-noto-sans-symbols-2
   - font-symbols-only-nerd-font
+  - font-sf-mono-nerd-font (brew tap epk/epk first)
 - other packages
   - ghostty
   - neovim
