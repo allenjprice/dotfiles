@@ -35,6 +35,7 @@ My personal collection of configs for my zshell, neovim, etc.
   - jq
   - fzf
   - zsh-completions
+  - aerospace
 
 ## install from not homebrew
 
