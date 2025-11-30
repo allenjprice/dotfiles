@@ -22,6 +22,7 @@ return {
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "╲", right = "╱" },
 			},
+			tabline = {},
 			sections = {
 				lualine_x = {
 					{
@@ -33,5 +34,6 @@ return {
 				},
 			},
 		})
+		vim.opt.showtabline = 0
 	end,
 }
