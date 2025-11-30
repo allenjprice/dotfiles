@@ -19,6 +19,8 @@ return {
 		lualine.setup({
 			options = {
 				theme = "tokyonight",
+				section_separators = { left = "", right = "" },
+				component_separators = { left = "╲", right = "╱" },
 			},
 			sections = {
 				lualine_x = {
@@ -27,8 +29,6 @@ return {
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
-					{ "encoding" },
-					{ "fileformat" },
 					{ "filetype" },
 				},
 			},
