@@ -66,6 +66,35 @@ alias cd="z"
 # ---- fzf ----
 source <(fzf --zsh)
 
+# ---- sesh ----
+
+# sesh connect, but list sessions in fzf for easy times
+function sf() {
+  local session
+
+  # store fzf options as an array
+  local -a FZF_OPTS=(
+    --no-sort
+    --ansi
+    --border-label ' sesh '
+    --prompt '⚡  '
+    --header '  ^a all ^t tmux ^x zoxide'
+    --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)'
+    --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t --icons)'
+    --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z --icons)'
+    --preview-window 'right:55%'
+    --preview 'sesh preview {}'
+  )
+
+  # run fzf with the array expanded properly
+  session="$(sesh list --icons | fzf "${FZF_OPTS[@]}")" || return 0
+
+  # exit if cancelled
+  [[ -z $session ]] && return 0
+
+  sesh connect "$session"
+}
+
 # ----- Bat -----
 
 export BAT_THEME=tokyonight_storm
