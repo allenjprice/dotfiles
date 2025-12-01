@@ -48,9 +48,12 @@ My personal collection of configs for my zshell, neovim, etc.
 
 after installing everything, add the following to your local .zshrc
 
-```
+```sh
 # --- make nvim default editor ----
 export EDITOR=nvim
+
+# --- easy clear ---
+alias c="clear"
 
 # ---- Eza -----
 
